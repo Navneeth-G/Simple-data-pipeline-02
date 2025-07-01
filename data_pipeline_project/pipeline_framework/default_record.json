@@ -1,0 +1,49 @@
+{
+  "record": {
+    "SOURCE_NAME": "elasticsearch",
+    "SOURCE_CATEGORY": null, 
+    "SOURCE_SUBCATEGORY": null,
+    "STAGE_NAME": "s3",
+    "STAGE_CATEGORY": null,
+    "STAGE_SUBCATEGORY": null,
+    "TARGET_NAME": "snowflake",
+    "TARGET_CATEGORY": null,
+    "TARGET_SUBCATEGORY": null,
+    "PIPELINE_NAME": "default_pipeline",
+    "SOURCE_ID": null,
+    "STAGE_ID": null,
+    "TARGET_ID": null,
+    "PIPELINE_ID": null,
+    "TARGET_DAY": null,
+    "WINDOW_START_TIME": null,
+    "WINDOW_END_TIME": null,
+    "TIME_INTERVAL": null,
+    
+    "PIPELINE_STATUS": "PENDING",
+    "PIPELINE_START_TIME": null,
+    "PIPELINE_END_TIME": null,
+    "DAG_RUN_ID": null,
+    
+    "SOURCE_TO_STAGE_INGESTION_STATUS": "PENDING",
+    "SOURCE_TO_STAGE_INGESTION_START_TIME": null,
+    "SOURCE_TO_STAGE_INGESTION_END_TIME": null,
+    
+    "STAGE_TO_TARGET_INGESTION_STATUS": "PENDING", 
+    "STAGE_TO_TARGET_INGESTION_START_TIME": null,
+    "STAGE_TO_TARGET_INGESTION_END_TIME": null,
+    
+    "AUDIT_STATUS": "PENDING",
+    "AUDIT_START_TIME": null,
+    "AUDIT_END_TIME": null,
+    "AUDIT_RESULT": null,
+    "SOURCE_COUNT": null,
+    "TARGET_COUNT": null,
+    "COUNT_DIFFERENCE": null,
+    "PERCENTAGE_DIFFERENCE": null,
+    
+    "PHASE_COMPLETED": null,
+    "RETRY_ATTEMPT": 0,
+    "RECORD_FIRST_CREATED_TIME": null,
+    "RECORD_LAST_UPDATED_TIME": null
+  }
+}

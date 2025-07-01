@@ -1,0 +1,61 @@
+{
+"env": "dev", 
+  "timezone": "America/Los_Angeles",
+  "x_time_back": "1d",
+  "granularity": "2h",
+  "stale_threshold_hours": 2,
+  
+  "username": "SNOWFLAKE_USER",
+  "password": "SNOWFLAKE_PASSWORD",
+  "account": "SNOWFLAKE_ACCOUNT",
+  "warehouse": "COMPUTE_WH",
+  
+  "drive_database": "PIPELINE_METADATA",
+  "drive_schema": "CONTROL",
+  "drive_table": "PIPELINE_RECORDS",
+  
+  "raw_database": "PROD_RAW_DATA",
+  "raw_schema": "PROD_STAGING",
+  "raw_table": "APPLICATION_LOGS",
+  "raw_task_name": "PROD_SNOWPIPE_TASK",
+  
+  "snowpipe_max_wait_seconds":600,
+  "snowpipe_check_interval_seconds": 120,
+
+  "index_group": "application_logs",
+  "index_name": "webapp_logs",  
+  "host_name": "prod-es-cluster.company.com",
+  "port": 9200,
+  "index_id": "application_logs_v2",
+  "es_username": "pipeline_user",
+  "es_password": "PROD_ES_PASSWORD",
+  "timestamp_field": "@timestamp",
+  "default_elasticdump_retries": 3,
+  "retry_delay": 5000,
+  "max_file_size_limit": 10000,
+  
+  "aws_access_key_id": "AKIAIOSFODNN7EXAMPLE",
+  "aws_secret_access_key": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+  "aws_region": "us-west-2",
+  
+  "bucket_name": "prod-data-lake-staging",
+  "s3_prefix_list": ["raw_data", "{env}", "logs", "{index_group}", "elasticsearch", "{index_name}", "daily", "{index_id}"],
+  
+ 
+  "check_fields": ["SOURCE_ID", "STAGE_ID", "TARGET_ID", "PIPELINE_ID"],
+  
+  "cron_schedule": "0 */1 * * *",
+  "email_list": ["data-eng@company.com", "ops@company.com"],
+  "email_on_failure": true,
+  "email_on_retry": false,
+  "airflow_dag_max_retry_task": 2,
+  
+  "record": {
+    "SOURCE_NAME": "elasticsearch_prod",
+    "STAGE_NAME": "s3_prod",
+    "TARGET_NAME": "snowflake_prod",
+    "PIPELINE_NAME": "webapp_logs_pipeline"
+  }
+}
+
+
