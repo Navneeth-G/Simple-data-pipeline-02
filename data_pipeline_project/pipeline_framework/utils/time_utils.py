@@ -116,4 +116,39 @@ def calculate_day_from_timestamp(timestamp: Union[str, datetime, pd.Timestamp, p
     return adjusted_time.start_of('day')
 
 
+def convert_to_pendulum(value: Union[str, datetime, pd.Timestamp, pendulum.DateTime, int, float]) -> pendulum.DateTime:
+    """
+    Convert any timestamp input to a Pendulum datetime object via ISO 8601 string.
+    Assumes all inputs have timezone info or are timezone-aware.
+
+    Args:
+        value: Timestamp in any common format
+
+    Returns:
+        pendulum.DateTime
+    """
+    if isinstance(value, pendulum.DateTime):
+        return value
+
+    try:
+        if isinstance(value, str):
+            iso_string = value
+
+        elif isinstance(value, datetime):
+            iso_string = value.isoformat()
+
+        elif isinstance(value, pd.Timestamp):
+            iso_string = value.isoformat()
+
+        elif isinstance(value, (int, float)):
+            dt = datetime.fromtimestamp(value)
+            iso_string = dt.isoformat()
+
+        else:
+            raise TypeError(f"Unsupported type: {type(value)}")
+
+        return pendulum.parse(iso_string)
+
+    except Exception as e:
+        raise ValueError(f"Failed to convert '{value}' to pendulum: {str(e)}")
 
