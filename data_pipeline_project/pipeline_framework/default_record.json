@@ -15,8 +15,13 @@
     "TARGET_ID": null,
     "PIPELINE_ID": null,
     "TARGET_DAY": null,
+
+
     "WINDOW_START_TIME": null,
     "WINDOW_END_TIME": null,
+
+
+    
     "TIME_INTERVAL": null,
     "PIPELINE_PRIORITY": 1.3,
     "PIPELINE_STATUS": "PENDING",
